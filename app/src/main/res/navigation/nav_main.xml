@@ -7,21 +7,61 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.tayang.HomeFragment"
-        android:label="Home"/>
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detailFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.example.tayang.ExploreFragment"
-        android:label="Explore"/>
+        android:label="Explore">
+        <action
+            android:id="@+id/action_explore_to_detail"
+            app:destination="@id/detailFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.tayang.FavoriteFragment"
-        android:label="Favorite"/>
+        android:label="Favorite">
+        <action
+            android:id="@+id/action_favorite_to_detail"
+            app:destination="@id/detailFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.tayang.ProfileFragment"
         android:label="Profile"/>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.tayang.DetailFragment"
+        android:label="Detail">
+        <argument
+            android:name="movieId"
+            app:argType="integer"/>
+        <argument
+            android:name="movieTitle"
+            app:argType="string"/>
+        <argument
+            android:name="posterPath"
+            app:argType="string"/>
+        <argument
+            android:name="backdropPath"
+            app:argType="string"/>
+        <argument
+            android:name="overview"
+            app:argType="string"/>
+        <argument
+            android:name="rating"
+            app:argType="float"/>
+        <argument
+            android:name="mediaType"
+            app:argType="string"
+            android:defaultValue="movie"/>
+    </fragment>
 
 </navigation>

@@ -11,7 +11,7 @@ public class ApiClient {
 
     public static ApiService getService() {
         if (retrofit == null) {
-            // Logging interceptor — buat lihat request/response di Logcat
+            // buat lihat request/response di Logcat
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 

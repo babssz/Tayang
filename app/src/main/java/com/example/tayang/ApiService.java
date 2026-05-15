@@ -11,21 +11,27 @@ public interface ApiService {
     @GET("trending/all/week")
     Call<MovieResponse> getTrending(
             @Query("api_key") String apiKey,
-            @Query("language") String language
+            @Query("language") String language,
+            @Query("include_adult") boolean includeAdult,
+            @Query("with_genres") String genres
     );
 
     // Film populer
     @GET("movie/popular")
     Call<MovieResponse> getPopularMovies(
             @Query("api_key") String apiKey,
-            @Query("language") String language
+            @Query("language") String language,
+            @Query("include_adult") boolean includeAdult,
+            @Query("with_genres") String genres
     );
 
     // Serial populer
     @GET("tv/popular")
     Call<MovieResponse> getPopularTv(
             @Query("api_key") String apiKey,
-            @Query("language") String language
+            @Query("language") String language,
+            @Query("include_adult") boolean includeAdult,
+            @Query("with_genres") String genres
     );
 
     // Detail film
@@ -33,7 +39,8 @@ public interface ApiService {
     Call<Movie> getMovieDetail(
             @Path("id") int id,
             @Query("api_key") String apiKey,
-            @Query("language") String language
+            @Query("language") String language,
+            @Query("with_genres") String genres
     );
 
     // Trailer film
@@ -48,6 +55,23 @@ public interface ApiService {
     Call<MovieResponse> searchMovies(
             @Query("api_key") String apiKey,
             @Query("query") String query,
+            @Query("language") String language,
+            @Query("include_adult") boolean includeAdult
+    );
+
+    // Ambil daftar genre film
+    @GET("genre/movie/list")
+    Call<GenreResponse> getGenres(
+            @Query("api_key") String apiKey,
             @Query("language") String language
+    );
+
+    // Film berdasarkan genre
+    @GET("discover/movie")
+    Call<MovieResponse> getMoviesByGenre(
+            @Query("api_key") String apiKey,
+            @Query("language") String language,
+            @Query("include_adult") boolean includeAdult,
+            @Query("with_genres") int genreId
     );
 }

@@ -27,6 +27,7 @@ import java.util.concurrent.Executors;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import androidx.navigation.Navigation;
 
 public class HomeFragment extends Fragment {
 
@@ -90,7 +91,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadTrending() {
-        ApiClient.getService().getTrending(Constants.API_KEY, "id")
+        ApiClient.getService().getTrending(Constants.API_KEY, "id", false, "28,12,16,35,18,10751,14,878")
                 .enqueue(new Callback<MovieResponse>() {
                     @Override
                     public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
@@ -98,10 +99,8 @@ public class HomeFragment extends Fragment {
                             List<Movie> trending = response.body().getResults();
 
                             // Setup banner
-                            bannerAdapter = new BannerAdapter(getContext(), trending, movie -> {
-                                // Nanti kita tambah navigasi ke detail
-                                Toast.makeText(getContext(), movie.getTitle(), Toast.LENGTH_SHORT).show();
-                            });
+                            bannerAdapter = new BannerAdapter(getContext(), trending, movie ->
+                                navigateToDetail(movie));
                             vpBanner.setAdapter(bannerAdapter);
 
                             // Hubungkan dot indicator ke ViewPager2
@@ -122,15 +121,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadPopularMovies() {
-        ApiClient.getService().getPopularMovies(Constants.API_KEY, "id")
+        ApiClient.getService().getPopularMovies(Constants.API_KEY, "id", false, "28,12,16,35,18,10751,14,878")
                 .enqueue(new Callback<MovieResponse>() {
                     @Override
                     public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             List<Movie> movies = response.body().getResults();
-                            movieAdapter = new MovieAdapter(getContext(), movies, movie -> {
-                                Toast.makeText(getContext(), movie.getTitle(), Toast.LENGTH_SHORT).show();
-                            });
+                            movieAdapter = new MovieAdapter(getContext(), movies, movie ->
+                                navigateToDetail(movie));
                             rvMovies.setAdapter(movieAdapter);
                         }
                     }
@@ -144,15 +142,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadPopularTv() {
-        ApiClient.getService().getPopularTv(Constants.API_KEY, "id")
+        ApiClient.getService().getPopularTv(Constants.API_KEY, "id", false, "28,12,16,35,18,10751,14,878\"")
                 .enqueue(new Callback<MovieResponse>() {
                     @Override
                     public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             List<Movie> tvList = response.body().getResults();
-                            tvAdapter = new MovieAdapter(getContext(), tvList, movie -> {
-                                Toast.makeText(getContext(), movie.getTitle(), Toast.LENGTH_SHORT).show();
-                            });
+                            tvAdapter = new MovieAdapter(getContext(), tvList, movie ->
+                                    navigateToDetail(movie));
                             rvTv.setAdapter(tvAdapter);
                         }
                     }
@@ -170,5 +167,19 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         // Stop auto-scroll saat fragment di destroy biar ga memory leak
         autoScrollHandler.removeCallbacks(autoScrollRunnable);
+    }
+
+    private void navigateToDetail(Movie movie) {
+        Bundle args = new Bundle();
+        args.putInt("movieId", movie.getId());
+        args.putString("movieTitle", movie.getTitle());
+        args.putString("posterPath", movie.getPosterPath());
+        args.putString("backdropPath", movie.getBackdropPath());
+        args.putString("overview", movie.getOverview());
+        args.putFloat("rating", (float) movie.getVoteAverage());
+        args.putString("mediaType", movie.getMediaType() != null ? movie.getMediaType() : "movie");
+
+        Navigation.findNavController(requireView())
+                .navigate(R.id.action_home_to_detail, args);
     }
 }

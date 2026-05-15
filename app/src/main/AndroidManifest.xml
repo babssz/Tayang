@@ -32,6 +32,10 @@
 
         <activity android:name=".AuthActivity"
             android:exported="false"/>
+
+        <activity android:name=".PlayerActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
