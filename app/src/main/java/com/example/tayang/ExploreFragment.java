@@ -28,7 +28,7 @@ public class ExploreFragment extends Fragment {
     private EditText etSearch;
     private RecyclerView rvGenres, rvResults;
     private Button btnRefresh;
-    private MovieAdapter resultAdapter;
+    private MovieGridAdapter resultAdapter;
     private GenreAdapter genreAdapter;
 
     @Nullable
@@ -164,7 +164,7 @@ public class ExploreFragment extends Fragment {
 
     private void updateResults(List<Movie> movies) {
         if (resultAdapter == null) {
-            resultAdapter = new MovieAdapter(getContext(), movies, movie -> navigateToDetail(movie));
+            resultAdapter = new MovieGridAdapter(getContext(), movies, movie -> navigateToDetail(movie));
             rvResults.setAdapter(resultAdapter);
         } else {
             resultAdapter.updateData(movies);
