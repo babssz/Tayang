@@ -13,4 +13,8 @@
     <color name="text_muted">#93A0C3</color>
 
     <color name="border">#263354</color>
+
+    <color name="bg_theme">#F5F5F5</color>
+    <color name="surface_theme">#FFFFFF</color>
+    <color name="text_theme">#1A2E32</color>
 </resources>

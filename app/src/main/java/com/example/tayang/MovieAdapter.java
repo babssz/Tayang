@@ -47,9 +47,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 AnimationUtils.loadAnimation(context, R.anim.fade_slide_up)
         );
 
-        holder.tvTitle.setText(movie.getTitle());
-        holder.tvRating.setText("★ " + String.format("%.1f", movie.getVoteAverage()));
-
         // Load poster pakai Glide
         Glide.with(context)
                 .load(movie.getFullPosterUrl())
@@ -69,13 +66,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     static class MovieViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPoster;
-        TextView tvTitle, tvRating;
 
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             ivPoster = itemView.findViewById(R.id.iv_poster);
-            tvTitle = itemView.findViewById(R.id.tv_title);
-            tvRating = itemView.findViewById(R.id.tv_rating);
         }
     }
 }

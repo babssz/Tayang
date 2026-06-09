@@ -42,9 +42,6 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.Grid
         holder.itemView.startAnimation(
                 AnimationUtils.loadAnimation(context, R.anim.fade_slide_up));
 
-        holder.tvTitle.setText(movie.getTitle());
-        holder.tvRating.setText("★ " + String.format("%.1f", movie.getVoteAverage()));
-
         Glide.with(context)
                 .load(movie.getFullPosterUrl())
                 .placeholder(R.color.surface)
@@ -54,7 +51,9 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.Grid
     }
 
     @Override
-    public int getItemCount() { return movies != null ? movies.size() : 0; }
+    public int getItemCount() {
+        return movies != null ? movies.size() : 0;
+    }
 
     public void updateData(List<Movie> newMovies) {
         this.movies = newMovies;
@@ -63,13 +62,10 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.Grid
 
     static class GridViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPoster;
-        TextView tvTitle, tvRating;
 
         public GridViewHolder(@NonNull View itemView) {
             super(itemView);
             ivPoster = itemView.findViewById(R.id.iv_poster);
-            tvTitle = itemView.findViewById(R.id.tv_title);
-            tvRating = itemView.findViewById(R.id.tv_rating);
         }
     }
 }
