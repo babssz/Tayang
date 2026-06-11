@@ -7,13 +7,23 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatDelegate;
+import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Cek tema tersimpan, default dark
+        SharedPreferences prefs = getSharedPreferences("tayang_prefs", MODE_PRIVATE);
+        boolean isDark = prefs.getBoolean("is_dark_theme", true); // default true = dark
+        if (isDark) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
@@ -29,7 +39,6 @@ public class SplashActivity extends AppCompatActivity {
 
         // Setelah 2.5 detik, cek apakah user sudah login
         new Handler().postDelayed(() -> {
-            SharedPreferences prefs = getSharedPreferences("tayang_prefs", MODE_PRIVATE);
             boolean isLoggedIn = prefs.getBoolean("is_logged_in", false);
 
             Intent intent;

@@ -1,11 +1,12 @@
 <resources>
     <style name="Theme.Tayang" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/surface</item>
+        <item name="colorPrimary">@color/highlight</item>
+        <item name="colorPrimaryVariant">@color/accent</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:windowBackground">@color/bg_theme</item>
         <item name="android:statusBarColor">@color/bg_theme</item>
-        <item name="android:navigationBarColor">@color/bg_theme</item>
+        <item name="android:navigationBarColor">@color/nav_bg</item>
         <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/text_primary</item>
     </style>
 </resources>

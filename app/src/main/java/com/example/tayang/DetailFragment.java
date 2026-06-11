@@ -133,7 +133,6 @@ public class DetailFragment extends Fragment {
     }
 
     private void loadTrailer(int movieId, String mediaType) {
-        // Untuk TV series pakai endpoint berbeda
         Call<VideoResponse> call = ApiClient.getService()
                 .getMovieVideos(movieId, Constants.API_KEY);
 
@@ -143,11 +142,25 @@ public class DetailFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     for (Trailer trailer : response.body().getResults()) {
                         if (trailer.getType().equals("Trailer")) {
-                            // Buka PlayerActivity dengan URL trailer
-                            android.content.Intent intent = new android.content.Intent(
-                                    getActivity(), PlayerActivity.class);
-                            intent.putExtra("youtube_key", trailer.getKey());
-                            startActivity(intent);
+                            String youtubeKey = trailer.getKey();
+
+                            // Coba buka di app YouTube dulu
+                            android.net.Uri uri = android.net.Uri
+                                    .parse("vnd.youtube:" + youtubeKey);
+                            android.content.Intent intent =
+                                    new android.content.Intent(
+                                            android.content.Intent.ACTION_VIEW, uri);
+
+                            if (intent.resolveActivity(
+                                    requireActivity().getPackageManager()) != null) {
+                                startActivity(intent);
+                            } else {
+                                // Fallback ke browser
+                                android.net.Uri webUri = android.net.Uri
+                                        .parse("https://www.youtube.com/watch?v=" + youtubeKey);
+                                startActivity(new android.content.Intent(
+                                        android.content.Intent.ACTION_VIEW, webUri));
+                            }
                             return;
                         }
                     }

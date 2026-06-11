@@ -5,20 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Backdrop/gambar banner -->
     <ImageView
         android:id="@+id/iv_backdrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
 
-    <!-- Gradient overlay gelap di bawah -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_banner"/>
 
-    <!-- Judul film di atas banner -->
     <TextView
         android:id="@+id/tv_banner_title"
         android:layout_width="match_parent"
@@ -30,21 +27,7 @@
         android:fontFamily="@font/poppins"
         android:maxLines="2"
         android:ellipsize="end"
-        app:layout_constraintBottom_toTopOf="@id/tv_banner_rating"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Rating banner -->
-    <TextView
-        android:id="@+id/tv_banner_rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingBottom="16dp"
-        android:textColor="@color/highlight"
-        android:textSize="13sp"
-        android:fontFamily="@font/poppins"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

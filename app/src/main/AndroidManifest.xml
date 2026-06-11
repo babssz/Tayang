@@ -35,7 +35,15 @@
 
         <activity android:name=".PlayerActivity"
             android:exported="false"
+            android:hardwareAccelerated="true"
             android:screenOrientation="landscape"/>
     </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="vnd.youtube"/>
+        </intent>
+    </queries>
 
 </manifest>

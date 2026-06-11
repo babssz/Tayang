@@ -38,7 +38,6 @@ public class HomeFragment extends Fragment {
 
     private BannerAdapter bannerAdapter;
     private MovieAdapter movieAdapter, tvAdapter;
-
     private Handler autoScrollHandler = new Handler(Looper.getMainLooper());
     private int currentBannerPage = 0;
 
@@ -63,6 +62,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
 
         vpBanner = view.findViewById(R.id.vp_banner);
         tabIndicator = view.findViewById(R.id.tab_indicator);

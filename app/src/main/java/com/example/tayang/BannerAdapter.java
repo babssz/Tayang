@@ -40,7 +40,6 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.BannerView
         Movie movie = movies.get(position);
 
         holder.tvTitle.setText(movie.getTitle());
-        holder.tvRating.setText("★ " + String.format("%.1f", movie.getVoteAverage()));
 
         Glide.with(context)
                 .load(movie.getFullBackdropUrl())
@@ -61,7 +60,6 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.BannerView
             super(itemView);
             ivBackdrop = itemView.findViewById(R.id.iv_backdrop);
             tvTitle = itemView.findViewById(R.id.tv_banner_title);
-            tvRating = itemView.findViewById(R.id.tv_banner_rating);
         }
     }
 }

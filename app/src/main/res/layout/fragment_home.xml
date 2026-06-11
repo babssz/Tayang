@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_bg">
+    android:background="@color/bg_theme">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,14 +29,14 @@
             app:tabMaxWidth="16dp"
             app:tabPaddingStart="4dp"
             app:tabPaddingEnd="4dp"
-            android:background="@color/dark_bg"/>
+            android:background="@color/bg_theme"/>
 
         <!-- Section film populer -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Film Populer"
-            android:textColor="@color/white"
+            android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/poppins"
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Serial Populer"
-            android:textColor="@color/white"
+            android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/poppins"
@@ -83,7 +83,7 @@
             android:text="Refresh"
             android:visibility="gone"
             android:backgroundTint="@color/highlight"
-            android:textColor="@color/dark_bg"
+            android:textColor="@color/bg_theme"
             android:layout_gravity="center"
             android:layout_margin="16dp"/>
 

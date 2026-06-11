@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
-    android:background="@color/dark_bg">
+    android:background="@color/bg_theme">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profil"
-            android:textColor="@color/white"
+            android:textColor="@color/text_primary"
             android:textSize="20sp"
             android:textStyle="bold"
             android:fontFamily="@font/poppins"
@@ -43,7 +43,7 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="@font/poppins"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="12dp"
-            app:cardBackgroundColor="@color/surface"
+            app:cardBackgroundColor="@color/card_bg"
             app:layout_constraintTop_toBottomOf="@id/tv_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -95,7 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
-                        android:textColor="@color/highlight"
+                        android:textColor="@color/text_primary"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/poppins"/>
@@ -127,7 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
-                        android:textColor="@color/highlight"
+                        android:textColor="@color/text_primary"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/poppins"/>
@@ -153,7 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:cardCornerRadius="12dp"
-            app:cardBackgroundColor="@color/surface"
+            app:cardBackgroundColor="@color/card_bg"
             app:layout_constraintTop_toBottomOf="@id/card_stats"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Dark Theme"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_primary"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppins"/>
 
