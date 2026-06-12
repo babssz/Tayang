@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
     android:background="@color/bg_theme">
 
     <!-- Search bar -->
@@ -16,8 +15,9 @@
         android:id="@+id/et_search"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/bg_input"
         android:fontFamily="@font/poppins"
         android:hint="Cari film atau serial..."
@@ -25,7 +25,7 @@
         android:inputType="text"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="@color/white"
+        android:textColor="@color/text_primary"
         android:textColorHint="@color/text_muted"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,27 +40,31 @@
         android:clipToPadding="false"
         android:orientation="horizontal"
         android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_search" />
 
+    <!-- Tombol refresh -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_results"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
         android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="3"
-        app:layout_constraintTop_toBottomOf="@id/rv_genres"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/rv_genres"
+        app:layout_constraintVertical_bias="0.217"
+        app:spanCount="3" />
 
-    <!-- Tombol refresh -->
     <Button
         android:id="@+id/btn_refresh"
         android:layout_width="wrap_content"

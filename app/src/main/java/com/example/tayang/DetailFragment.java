@@ -125,10 +125,10 @@ public class DetailFragment extends Fragment {
     private void updateFavoriteButton() {
         if (isFavorite) {
             btnFavorite.setText("♥  Tersimpan di Favorit");
-            btnFavorite.setTextColor(getResources().getColor(R.color.highlight, null));
+            btnFavorite.setTextColor(getResources().getColor(R.color.text_primary, null));
         } else {
             btnFavorite.setText("♡  Simpan ke Favorit");
-            btnFavorite.setTextColor(getResources().getColor(R.color.white, null));
+            btnFavorite.setTextColor(getResources().getColor(R.color.text_primary, null));
         }
     }
 

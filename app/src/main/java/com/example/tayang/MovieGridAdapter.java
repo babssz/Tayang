@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,9 +37,6 @@ public class MovieGridAdapter extends RecyclerView.Adapter<MovieGridAdapter.Grid
     @Override
     public void onBindViewHolder(@NonNull GridViewHolder holder, int position) {
         Movie movie = movies.get(position);
-
-        holder.itemView.startAnimation(
-                AnimationUtils.loadAnimation(context, R.anim.fade_slide_up));
 
         Glide.with(context)
                 .load(movie.getFullPosterUrl())

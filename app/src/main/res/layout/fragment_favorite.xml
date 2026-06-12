@@ -4,24 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
     android:background="@color/bg_theme">
 
+    <!-- Tampil saat tidak ada favorit -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/poppins"
         android:text="Favorit"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tampil saat tidak ada favorit -->
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="wrap_content"
@@ -40,8 +39,8 @@
         android:id="@+id/rv_favorites"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:paddingTop="8dp"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

@@ -7,7 +7,7 @@
 
     <!-- Warna tetap (tidak berubah) -->
     <color name="primary">#10172A</color>
-    <color name="accent">#6C63FF</color>
+    <color name="accent">#051DBA</color>
     <color name="highlight">#18233F</color>
     <color name="text_muted">#93A0C3</color>
     <color name="border">#263354</color>

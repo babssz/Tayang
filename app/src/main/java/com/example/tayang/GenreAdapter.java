@@ -43,7 +43,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.GenreViewHol
         // Highlight genre yang dipilih
         if (selectedPosition == position) {
             holder.tvGenre.setBackgroundResource(R.drawable.bg_genre_active);
-            holder.tvGenre.setTextColor(context.getResources().getColor(R.color.dark_bg, null));
+            holder.tvGenre.setTextColor(context.getResources().getColor(R.color.white, null));
         } else {
             holder.tvGenre.setBackgroundResource(R.drawable.bg_genre_inactive);
             holder.tvGenre.setTextColor(context.getResources().getColor(R.color.text_muted, null));

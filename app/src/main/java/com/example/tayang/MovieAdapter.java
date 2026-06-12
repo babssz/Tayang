@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,10 +41,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movies.get(position);
 
-        // Animasi item muncul dari bawah
-        holder.itemView.startAnimation(
-                AnimationUtils.loadAnimation(context, R.anim.fade_slide_up)
-        );
 
         // Load poster pakai Glide
         Glide.with(context)
