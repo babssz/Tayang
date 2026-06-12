@@ -7,22 +7,21 @@
     android:background="@color/bg_theme"
     android:padding="28dp">
 
+
     <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
         android:layout_marginBottom="8dp"
         android:text="Tayang"
         android:textColor="@color/text_primary"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/et_name"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
-
-
 
     <EditText
         android:id="@+id/et_name"
@@ -96,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sudah punya akun? Masuk"
-        android:textColor="@color/highlight"
+        android:textColor="@color/text_muted"
         android:textSize="13sp"
         app:layout_constraintTop_toBottomOf="@id/btn_register"
         app:layout_constraintBottom_toBottomOf="parent"

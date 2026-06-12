@@ -109,7 +109,7 @@
             android:id="@+id/btn_favorite"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="♡  Simpan ke Favorit"
+            android:text="Simpan ke Favorit"
             android:textColor="@color/text_muted"
             android:fontFamily="@font/poppins"
             android:stateListAnimator="@null"
